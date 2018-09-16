@@ -1,15 +1,18 @@
-from Morse.Dictonarie import Dictonarie as d
-from Morse.StringConv import StringC as s
+from morse.dictonarie import Dictonarie
+from morse.string_conv import StringC
 import winsound as ws
 
 
 class Morse:
-    @staticmethod
-    def conv(frase):
+    def __init__(self):
+        self.d = Dictonarie()
+        self.s = StringC()
+
+    def conv(self, frase):
         resp = ''
         for x in list(frase):
-            x = s.tra(x)
-            morse = d.code(d, x)
+            x = self.s.tra(x)
+            morse = self.d.code(x)
             resp += morse + ' '
         return resp
 
