@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a631a563-3cd4-4a46-9c28-13922374c061" name="Default" comment="" />
+    <list default="true" id="a631a563-3cd4-4a46-9c28-13922374c061" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +29,7 @@
           <entry key="README" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="ini" value="3" />
+          <entry key="md" value="1" />
           <entry key="py" value="14" />
           <entry key="token" value="1" />
         </counts>
@@ -33,17 +37,18 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Ini" value="4" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="README" value="193" />
+          <entry key="README" value="200" />
           <entry key="configs" value="3" />
           <entry key="dummy" value="9" />
           <entry key="gitignore" value="47" />
+          <entry key="md" value="1" />
           <entry key="py" value="1532" />
           <entry key="token" value="16" />
         </counts>
@@ -51,7 +56,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Ini" value="19" />
-          <entry key="Markdown" value="193" />
+          <entry key="Markdown" value="201" />
           <entry key="PLAIN_TEXT" value="56" />
           <entry key="Python" value="1532" />
         </counts>
@@ -63,11 +68,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="68">
-                <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+                <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
               </first_editor>
               <second_editor />
             </state>
@@ -101,6 +106,7 @@
         <option value="$PROJECT_DIR$/morse/morse.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -266,7 +272,7 @@
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49772036" weight="0.3276923" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4969605" visible="true" weight="0.3276923" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4787234" weight="0.3276923" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -275,7 +281,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49772036" weight="0.3276923" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49924013" weight="0.32923076" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5212766" side_tool="true" visible="true" weight="0.3276923" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50303954" side_tool="true" visible="true" weight="0.3276923" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -397,8 +403,18 @@
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
           <first_editor relative-caret-position="68">
-            <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           </first_editor>
           <second_editor />
         </state>
