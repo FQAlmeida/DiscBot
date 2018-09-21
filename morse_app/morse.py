@@ -1,24 +1,25 @@
-from morse.dictonarie import Dictonarie
-from morse.string_conv import StringC
 import winsound as ws
+
+from morse_app import morse_dictonarie, morse_string_conv
 
 
 class Morse:
     def __init__(self):
-        self.d = Dictonarie()
-        self.s = StringC()
+        self.d = morse_dictonarie.Dictonarie()
+        self.s = morse_string_conv.StringC()
 
-    def conv(self, frase):
+    def conv(self, frase: str) -> str:
+        frase = frase.lower()
         resp = ''
         for x in list(frase):
             x = self.s.tra(x)
-            morse = self.d.code(x)
-            resp += morse + ' '
+            simb = self.d.code(x)
+            resp += simb + ' '
         return resp
 
     @staticmethod
     def getString():
-        return input('Digite a frase para converter para morse: ').lower()
+        return input('Digite a frase para converter para morse_app: ').lower()
 
     @staticmethod
     def beep(morse):
