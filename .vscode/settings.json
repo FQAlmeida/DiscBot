@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace"
+}

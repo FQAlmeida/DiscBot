@@ -1,4 +1,4 @@
-from gw2_app.apitoken import api_token
+from apps.gw2_app.apitoken import api_token
 
 
 class GW2:

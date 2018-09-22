@@ -1,11 +1,31 @@
 def welcome_console_msg(user):
-    l4 = " BOT ONLINE "
-    l1 = f"Logged in as: {user.name}"
-    l2 = f"Under ID: {user.id}"
-    bigger = len(l1) if len(l1) > len(l2) else len(l2)
-    l0 = f"{l4:*^{bigger}}"
-    l3 = "*" * bigger
-    msg = f"{l0}\n{l1}\n{l2}\n{l3}"
+    """
+    
+    **********BOT ONLINE***********
+         Logged in as: FULANO
+    Under ID: 456531235446518479879
+    *******************************
+
+    """
+    # Define data layout
+    logged = f"Logged in as: {user.name}"
+    id_data = f"Under ID: {user.id}"
+    bigger = (len(logged) if len(logged) > len(id_data) else len(id_data)) + 2
+
+    # Define the header 
+    header = f"{' BOT ONLINE ':*^{bigger}}"
+
+    # Define the logged_layout based in logged data
+    logged_layout = f"{logged:^{bigger}}"
+
+    # Define the id_layout based in id data
+    id_layout = f"{id_data:^{bigger}}"
+
+    # Define the Footer
+    footer = "*" * bigger
+
+    # Build the message
+    msg = f"{header}\n{logged_layout}\n{id_layout}\n{footer}\n"
     return msg
 
 

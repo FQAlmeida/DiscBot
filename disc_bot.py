@@ -2,8 +2,8 @@
 import discord
 from discord.ext import commands
 import random
-from morse_app.morse import Morse
-from gw2_app import gw2
+from apps.morse_app.morse import Morse
+from apps.gw2_app import gw2
 import configparser
 from log import logger
 from util import util

@@ -27,13 +27,22 @@ class Token:
         check = self.check_token(token)
         if check:
             cursor = self.conn.cursor()
-            cursor.execute("SELECT token_owner FROM tokens where token_owner =:owner", {"owner": owner})
+            cursor.execute(
+                "SELECT token_owner "
+                "FROM tokens "
+                "where token_owner =:owner",
+                {"owner": owner}
+            )
             data = cursor.fetchall()
             for row in data:
                 if owner in row[0]:
                     self._remove_permissions(owner)
-                    cursor.execute("UPDATE tokens SET token_value =:token "
-                                   "WHERE token_owner =:owner", {"token": token, "owner": owner})
+                    cursor.execute(
+                        "UPDATE tokens "
+                        "SET token_value =:token "
+                        "WHERE token_owner =:owner",
+                        {"token": token, "owner": owner}
+                    )
                     self._add_permissions(token=token, owner=owner, permissions=check[1]["permissions"])
                     cursor.close()
                     self.conn.commit()
@@ -50,7 +59,11 @@ class Token:
             for row in data:
                 if token in row[1]:
                     return False
-            cursor.execute("INSERT INTO tokens (token_value, token_owner) values (?, ?)", (token, owner))
+            cursor.execute(
+                "INSERT INTO tokens (token_value, token_owner) "
+                "values (?, ?)",
+                (token, owner)
+            )
             self._add_permissions(check[1]["permissions"], token, owner)
             cursor.close()
             self.conn.commit()
@@ -59,27 +72,43 @@ class Token:
 
     def remove_token(self, owner):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT token_owner FROM tokens where token_owner =:owner", {"owner": owner})
+        cursor.execute(
+            "SELECT token_owner "
+            "FROM tokens "
+            "where token_owner =:owner",
+            {"owner": owner}
+        )
         data = cursor.fetchall()
         for row in data:
             if owner in row[0]:
-                cursor.execute("DELETE FROM tokens WHERE token_owner =:owner", {"owner": owner})
+                cursor.execute(
+                    "DELETE FROM tokens "
+                    "WHERE token_owner =:owner",
+                    {"owner": owner}
+                )
                 cursor.close()
                 self.conn.commit()
                 return True
         cursor.close()
         return False
-    
+
     def _add_permissions(self, permissions: list, token: str, owner: str):
         cursor = self.conn.cursor()
         for permission in permissions:
-            cursor.execute("INSERT INTO tokens_permissions (token_value, permission_name, token_owner)"
-                           "VALUES (?, ?, ?)", (token, permission, owner))
+            cursor.execute(
+                "INSERT INTO tokens_permissions (token_value, permission_name, token_owner)"
+                "VALUES (?, ?, ?)",
+                (token, permission, owner)
+            )
         cursor.close()
         self.conn.commit()
 
     def _remove_permissions(self, owner: str):
         cursor = self.conn.cursor()
-        cursor.execute("DELETE FROM tokens_permissions WHERE token_owner=:owner", {"owner": owner})
+        cursor.execute(
+            "DELETE FROM tokens_permissions "
+            "WHERE token_owner=:owner",
+            {"owner": owner}
+        )
         cursor.close()
         self.conn.commit()

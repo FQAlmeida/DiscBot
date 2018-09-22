@@ -1,6 +1,7 @@
 import winsound as ws
 
-from morse_app import morse_dictonarie, morse_string_conv
+from apps.morse_app import morse_string_conv
+from apps.morse_app import morse_dictonarie
 
 
 class Morse:

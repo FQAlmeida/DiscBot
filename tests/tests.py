@@ -1,8 +1,8 @@
 import configparser
 import unittest
 
-from gw2_app.apitoken import api_token
-from morse_app.morse import Morse
+from apps.gw2_app.apitoken import api_token
+from apps.morse_app.morse import Morse
 
 
 class TestDiscBot(unittest.TestCase):
