@@ -118,4 +118,12 @@ async def update(ctx: discord.ext.commands.Context, msg: str):
     msg = "Token atualizado com sucesso" if check else "Token Inválido"
     await bot.say(msg)
 
+
+@gw2.command()
+async def dailies(tomorrow: str = None):
+    dailies = guild_wars_2.daily.get_dailies()
+    tomorrow = True if tomorrow is not None and tomorrow.lower() == "tomorrow" else False
+    msg = util.dailies_desc(dailies, tomorrow)
+    await bot.say(msg)
+
 bot.run(configs["TOKEN"].get("token"))

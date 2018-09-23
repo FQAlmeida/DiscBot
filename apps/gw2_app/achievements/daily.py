@@ -40,13 +40,14 @@ class Daily:
 
     def __init__(self):
         self.url = "https://api.guildwars2.com/v2/achievements/daily"
-        self.achiev_url = "https://api.guildwars2.com/v2/achievements?ids="
+        self.url_tomorrow = "https://api.guildwars2.com/v2/achievements/daily/tomorrow"
+        self.achievements_obj = Achievements()
 
-    def _get_dailies(self):
-        return requests.get(self.url).json()
+    def __get_dailies(self, tomorrow=False):
+        return requests.get(self.url if not tomorrow else self.url_tomorrow).json()
 
-    def get_dailies(self):
-        dailies = self._get_dailies()
+    def _get_dailies(self, tomorrow=False):
+        dailies = self.__get_dailies(tomorrow)
         pve = dailies.get("pve")
         pvp = dailies.get("pvp")
         wvw = dailies.get("wvw")
@@ -55,53 +56,64 @@ class Daily:
 
         return {"pve": pve, "pvp": pvp, "wvw": wvw, "fractals": fractals, "special": special}
 
-    def _build_achievements(self, dailies: dict):
-        pass
+    def get_dailies(self, tomorrow=False):
+        dailies = self._get_dailies(tomorrow)
+        ids_list = self._get_ids(dailies)
+        return self._build_achievements(ids_list)
+
+    def _build_achievements(self, ids: dict):
+        final_dailies = {"pve": [], "pvp": [], "wvw": [], "fractals": [], "special": []}
+        for key, ids_list in ids.items():
+            final_dailies[key] = self.achievements_obj.get_achievements(ids_list)
+        return final_dailies
 
     def _get_ids(self, dailies: dict):
-        ids = []
+        ids = {"pve": [], "pvp": [], "wvw": [], "fractals": [], "special": []}
 
-        def _build_pve(pve, ids: list):
-            for achiev in pve:
-                ids.append(achiev.get("id"))
+        def _build_pve(pve):
+            for achievement in pve:
+                ids["pve"].append(achievement.get("id"))
             return ids
 
-        def _build_pvp(pvp, ids: list):
-            for achiev in pvp:
-                ids.append(achiev.get("id"))
+        def _build_pvp(pvp):
+            for achievement in pvp:
+                ids["pvp"].append(achievement.get("id"))
             return ids
 
-        def _build_wvw(wvw, ids: list):
-            for achiev in wvw:
-                ids.append(achiev.get("id"))
+        def _build_wvw(wvw):
+            for achievement in wvw:
+                ids["wvw"].append(achievement.get("id"))
             return ids
 
-        def _build_fractals(fractals, ids: list):
-            for achiev in fractals:
-                ids.append(achiev.get("id"))
+        def _build_fractals(fractals):
+            for achievement in fractals:
+                ids["fractals"].append(achievement.get("id"))
             return ids
 
-        def _build_special(special, ids: list):
-            for achiev in special:
-                ids.append(achiev.get("id"))
+        def _build_special(special):
+            for achievement in special:
+                ids["special"].append(achievement.get("id"))
             return ids
 
-        return _build_pve(dailies["pve"], ids)
+        _build_pve(dailies["pve"])
+        _build_pvp(dailies["pvp"])
+        _build_wvw(dailies["wvw"])
+        _build_fractals(dailies["fractals"])
+        _build_special(dailies["special"])
+
+        return ids
 
 
 if __name__ == "__main__":
     daily = Daily()
-    dailies = daily.get_dailies()
+    dailies = daily._get_dailies()
 
     ids = daily._get_ids(dailies)
-    ids = ",".join(map(str, ids))
 
-    resp = requests.get(daily.achiev_url + ids).json()
+    # final_disct = dict(str, list(Achievements))
+    final_dict = daily._build_achievements(ids)
 
-    for achiev in resp:
-        a = Achievements()
-        a.id = achiev.get("id")
-        a.name = achiev.get("name")
-        a.description = achiev.get("description")
-        a.requirements = achiev.get("requirement")
-        print(a)
+    for key, value in final_dict.items():
+        print(f"{key:*^50}")
+        for v in value:
+            print(v)

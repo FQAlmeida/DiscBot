@@ -1,3 +1,8 @@
+import datetime
+
+import switch as switch
+
+
 def welcome_console_msg(user):
     """
     
@@ -36,3 +41,44 @@ def get_log_say_msg(msg: str):
 
 def get_log_msg(msg: str):
     return " ".join(msg.strip().replace("*", "").splitlines())
+
+
+def prettify_key(key: str):
+    with switch.Switch(key.lower()) as case:
+        if case("pve"):
+            return "PvE"
+        if case("pvp"):
+            return "PvP"
+        if case("wvw"):
+            return "WvW"
+        if case("fractals"):
+            return "Fractals"
+        if case("special"):
+            return "Festival"
+        if case.default:
+            return False
+
+
+def dailies_desc(dailies: dict, tommorow: False) -> str:
+    today = datetime.datetime.now().date()
+    if tommorow:
+        today += datetime.timedelta(days=1)
+    msg = "```md"
+
+    msg += f"\n# Guild Wars 2 -- Dailies -- {today}\n"
+    for key in dailies.keys():
+        if not dailies[key]:
+            continue
+        msg += f"\n## {prettify_key(key)}\n"
+        for a in range(len(dailies[key])):
+            if key == "pve":
+                msg += f"{a}. {dailies[key][a].requirements}\n"
+            elif key == "fractals":
+                if dailies[key][a].requirements != "" and dailies[key][a].requirements is not None:
+                    msg += f"{a}. {dailies[key][a].requirements}\n"
+                else:
+                    msg += f"{a}. {dailies[key][a].name}\n"
+            else:
+                msg += f"{a}. {dailies[key][a].name}\n"
+    msg += "```"
+    return msg

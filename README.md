@@ -30,6 +30,8 @@ All the commands have the "?" as prefix
             - Remove a Guild Wars 2 access token
         - update
             - Update a Guild Wars 2 access token
+    - dailies
+        - Shows all the daily achievements
 
 ## Instructions
 
@@ -61,7 +63,7 @@ In the data folder, you should to create a file named **configs.ini**, the file 
             > -  requirement: tip to complete the achievement 
             > - locked_text: another tip, more specific
 
-        2. [ ] Convert the list of dailies to list of achievements
+        2. [x] Convert the list of dailies to list of achievements
             - Structs a dictionary like:
                 > Dict{key, list(Achievements)}
 
@@ -69,33 +71,22 @@ In the data folder, you should to create a file named **configs.ini**, the file 
                 - Special is dailies from festival events
             - list(Achievements): A list of parsed dailies achievements to Achievements objects
             
-        4. [ ] Create a layout message with data
+        4. [x] Create a layout message with data
             ```
             Dailies Achievements - dd/MM/yyyy
             
             -------------- PvE --------------
             1. PvE Achievement 1 name
-                - description, if exists
-                - requirements 
-                - locked_text, if exists
             ...
             n. PvE Achievement n name
-                - description, if exists
-                - requirements
-                - locked_text, if exists
             ---------------------------------
             ...
             ------------ Special ------------ if Exists
             1. Special Achievement 1 name
-                - description, if exists
-                - requirements 
-                - locked_text, if exists
             ...
             n. Special Achievement n name
-                - description, if exists
-                - requirements
-                - locked_text, if exists
             ---------------------------------
             ```
-            1. [ ] Setup the layout
-            2. [ ] Pass to bay says as a embed message
+            1. [x] Setup the layout
+            2. [x] Pass to bot says as a md message
+        5. [x] Make a tomorrows daily view
