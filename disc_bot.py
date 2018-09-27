@@ -1,11 +1,14 @@
 # Imports
 import discord
 from discord.ext import commands
+
 import random
-from apps.morse_app.morse import Morse
-from apps.gw2_app import gw2
 import configparser
 from log import logger
+import typing
+
+from apps.morse_app.morse import Morse
+from apps.gw2_app import gw2
 from util import util
 
 
@@ -120,10 +123,10 @@ async def update(ctx: discord.ext.commands.Context, msg: str):
 
 
 @gw2.command()
-async def dailies(tomorrow: str = None):
-    dailies = guild_wars_2.daily.get_dailies()
+async def dailies(tomorrow: typing.Optional[str] = "today"):
+    daily = guild_wars_2.daily.get_dailies()
     tomorrow = True if tomorrow is not None and tomorrow.lower() == "tomorrow" else False
-    msg = util.dailies_desc(dailies, tomorrow)
+    msg = util.dailies_desc(daily, tomorrow)
     await bot.say(msg)
 
 bot.run(configs["TOKEN"].get("token"))

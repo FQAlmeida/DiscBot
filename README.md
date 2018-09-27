@@ -54,9 +54,9 @@ In the data folder, you should to create a file named **configs.ini**, the file 
         2. [x] Create a remove_token command
         3. [x] Create a update_token command
         4. [x] Build some tests
-    5. [ ] Create a daily achievements view
+    5. [x] Create a daily achievements view
         1. [x] Get dailies 
-        2. [x] Struct a Achievements class
+        2. [x] Build a Achievements class
             > - id
             > - name: achievement's name
             > - description: description of achievement, if it isn't blank
@@ -67,26 +67,14 @@ In the data folder, you should to create a file named **configs.ini**, the file 
             - Structs a dictionary like:
                 > Dict{key, list(Achievements)}
 
-            - key: ("PvE", "PvP", "WvW", "Fractals, Special")
+            - key: ("PvE", "PvP", "WvW", "Fractals", "Special")
                 - Special is dailies from festival events
             - list(Achievements): A list of parsed dailies achievements to Achievements objects
-            
-        4. [x] Create a layout message with data
-            ```
-            Dailies Achievements - dd/MM/yyyy
-            
-            -------------- PvE --------------
-            1. PvE Achievement 1 name
-            ...
-            n. PvE Achievement n name
-            ---------------------------------
-            ...
-            ------------ Special ------------ if Exists
-            1. Special Achievement 1 name
-            ...
-            n. Special Achievement n name
-            ---------------------------------
-            ```
-            1. [x] Setup the layout
-            2. [x] Pass to bot says as a md message
+    
         5. [x] Make a tomorrows daily view
+        
+        4. [ ] Create a layout message with data
+            1. [ ] Setup the layout
+                - Layout will be formed with 5 embed messages, 1 for each element in dict
+            2. [ ] Pass to bot says as a embed message
+                - Bot will say a message for each embed message

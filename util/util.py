@@ -59,9 +59,9 @@ def prettify_key(key: str):
             return False
 
 
-def dailies_desc(dailies: dict, tommorow: False) -> str:
+def dailies_desc(dailies: dict, tomorrow: False) -> str:
     today = datetime.datetime.now().date()
-    if tommorow:
+    if tomorrow:
         today += datetime.timedelta(days=1)
     msg = "```md"
 
@@ -81,4 +81,5 @@ def dailies_desc(dailies: dict, tommorow: False) -> str:
             else:
                 msg += f"{a}. {dailies[key][a].name}\n"
     msg += "```"
+    print(msg)
     return msg
