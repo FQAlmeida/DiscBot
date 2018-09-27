@@ -1,4 +1,6 @@
 # Imports
+import asyncio
+
 import discord
 from discord.ext import commands
 
@@ -123,10 +125,12 @@ async def update(ctx: discord.ext.commands.Context, msg: str):
 
 
 @gw2.command()
-async def dailies(tomorrow: typing.Optional[str] = "today"):
-    daily = guild_wars_2.daily.get_dailies()
+async def dailies(tomorrow: str = "today"):
     tomorrow = True if tomorrow is not None and tomorrow.lower() == "tomorrow" else False
-    msg = util.dailies_desc(daily, tomorrow)
-    await bot.say(msg)
+    all_dailies = guild_wars_2.daily.get_dailies(tomorrow=tomorrow)
+    for key, daily in all_dailies.items():
+        if daily:
+            msg = util.dailies_desc(daily, key, tomorrow)
+            await bot.say(embed=msg)
 
 bot.run(configs["TOKEN"].get("token"))

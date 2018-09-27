@@ -30,7 +30,7 @@ All the commands have the "?" as prefix
             - Remove a Guild Wars 2 access token
         - update
             - Update a Guild Wars 2 access token
-    - dailies
+    - dailies *Tomorrow
         - Shows all the daily achievements
 
 ## Instructions
@@ -44,6 +44,7 @@ In the data folder, you should to create a file named **configs.ini**, the file 
 
 ## Todo List
 
+1. [ ] Keep all commands documented and logged
 1. [x] Create a simple bot
 2. [x] Create a morse app
 3. [ ] Create a Guild Wars 2 app
@@ -73,8 +74,8 @@ In the data folder, you should to create a file named **configs.ini**, the file 
     
         5. [x] Make a tomorrows daily view
         
-        4. [ ] Create a layout message with data
-            1. [ ] Setup the layout
+        4. [x] Create a layout message with data
+            1. [x] Setup the layout
                 - Layout will be formed with 5 embed messages, 1 for each element in dict
-            2. [ ] Pass to bot says as a embed message
+            2. [x] Pass to bot says as a embed message
                 - Bot will say a message for each embed message

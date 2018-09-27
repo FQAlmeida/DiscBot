@@ -1,5 +1,6 @@
 import datetime
 
+import discord
 import switch as switch
 
 
@@ -43,6 +44,10 @@ def get_log_msg(msg: str):
     return " ".join(msg.strip().replace("*", "").splitlines())
 
 
+def get_images_path(image_name):
+    return f"data/images/{image_name}"
+
+
 def prettify_key(key: str):
     with switch.Switch(key.lower()) as case:
         if case("pve"):
@@ -59,27 +64,22 @@ def prettify_key(key: str):
             return False
 
 
-def dailies_desc(dailies: dict, tomorrow: False) -> str:
-    today = datetime.datetime.now().date()
-    if tomorrow:
-        today += datetime.timedelta(days=1)
-    msg = "```md"
+def dailies_desc(
+        dailies: dict, key: str, tomorrow: bool = False, colour: discord.Colour = discord.Colour.dark_magenta()
+) -> discord.Embed:
 
-    msg += f"\n# Guild Wars 2 -- Dailies -- {today}\n"
-    for key in dailies.keys():
-        if not dailies[key]:
-            continue
-        msg += f"\n## {prettify_key(key)}\n"
-        for a in range(len(dailies[key])):
-            if key == "pve":
-                msg += f"{a}. {dailies[key][a].requirements}\n"
-            elif key == "fractals":
-                if dailies[key][a].requirements != "" and dailies[key][a].requirements is not None:
-                    msg += f"{a}. {dailies[key][a].requirements}\n"
-                else:
-                    msg += f"{a}. {dailies[key][a].name}\n"
-            else:
-                msg += f"{a}. {dailies[key][a].name}\n"
-    msg += "```"
-    print(msg)
+    now = datetime.datetime.now()
+    date = now + (datetime.timedelta(days=1) if tomorrow else datetime.timedelta(days=0))
+    title = prettify_key(key)
+    image = get_images_path("Daily_Achievement.png")
+    description = f"{title} Daily Achievements - {date.date()}\n"
+
+    msg = discord.Embed(title=title, timestamp=date, description=description, colour=colour)
+    msg.set_thumbnail(url="https://i.imgur.com/oqNgdeP.png")
+
+    for daily in dailies:
+        name = f"{daily.name}"
+        value = f" - {daily.requirements}\n"
+        msg.add_field(name=name, value=value, inline=False)
+
     return msg

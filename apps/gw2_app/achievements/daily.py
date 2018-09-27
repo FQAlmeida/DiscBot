@@ -4,40 +4,6 @@ from apps.gw2_app.achievements.achievements import Achievements
 
 
 class Daily:
-
-    """
-    Guild Wars 2 - Daily Achievements
-    --- PvE ---
-    1)
-    2)
-    ..
-    n)
-
-    --- PvP ---
-    1)
-    2)
-    ..
-    n)
-
-    --- WvW ---
-    1)
-    2)
-    ..
-    n)
-
-    --- Fractals ---
-    1)
-    2)
-    ..
-    n)
-
-    --- Especial --- if exists
-    1)
-    2)
-    ..
-    n)
-    """
-
     def __init__(self):
         self.url = "https://api.guildwars2.com/v2/achievements/daily"
         self.url_tomorrow = "https://api.guildwars2.com/v2/achievements/daily/tomorrow"
