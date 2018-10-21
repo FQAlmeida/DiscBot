@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a631a563-3cd4-4a46-9c28-13922374c061" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/otavi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/otavi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/gw2_app/achievements/daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/gw2_app/achievements/daily.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/gw2_app/gw2.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/gw2_app/gw2_cog.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disc_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/disc_bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +22,7 @@
     <SUITE FILE_PATH="coverage/DiscBot$achievements.coverage" NAME="achievements Coverage Results" MODIFIED="1537658967191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/gw2_app/achievements" />
     <SUITE FILE_PATH="coverage/DiscBot$util.coverage" NAME="util Coverage Results" MODIFIED="1537582768598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/DiscBot$Unittests_for_tests_TestDiscBot_test_morse_hard_test.coverage" NAME="Unittests for tests.TestDiscBot.test_morse_hard_test Coverage Results" MODIFIED="1537563560059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/DiscBot$music.coverage" NAME="music Coverage Results" MODIFIED="1538179283145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/music_app" />
     <SUITE FILE_PATH="coverage/DiscBot$morse.coverage" NAME="morse Coverage Results" MODIFIED="1537564135433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/morse" />
     <SUITE FILE_PATH="coverage/DiscBot$Unittests_for_tests_TestDiscBot_test_check_token_gw2.coverage" NAME="Unittests for tests.TestDiscBot.test_check_token_gw2 Coverage Results" MODIFIED="1537564642215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/DiscBot$Main.coverage" NAME="Main Coverage Results" MODIFIED="1537558903408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -28,7 +31,7 @@
     <SUITE FILE_PATH="coverage/DiscBot$morse__1_.coverage" NAME="morse (1) Coverage Results" MODIFIED="1537564230902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/morse_app" />
     <SUITE FILE_PATH="coverage/DiscBot$Unittests_for_tests_TestDiscBot.coverage" NAME="Unittests for tests.TestDiscBot Coverage Results" MODIFIED="1537564986099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/DiscBot$Unittests_for_tests_DiscBotTests.coverage" NAME="Unittests for tests.DiscBotTests Coverage Results" MODIFIED="1537562880589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/DiscBot$disc_bot.coverage" NAME="disc_bot Coverage Results" MODIFIED="1538090963707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DiscBot$disc_bot.coverage" NAME="disc_bot Coverage Results" MODIFIED="1538196241441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -53,23 +56,27 @@
     <session id="1960006523">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.41" value="2" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.open.time.9" value="1" />
+          <entry key="project.open.time.9" value="2" />
           <entry key="project.open.time.95" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -83,13 +90,13 @@
           <entry key="log" value="8" />
           <entry key="md" value="12" />
           <entry key="png" value="1" />
-          <entry key="py" value="72" />
+          <entry key="py" value="93" />
           <entry key="requirements" value="2" />
           <entry key="sql" value="1" />
           <entry key="token" value="1" />
           <entry key="tokens" value="4" />
           <entry key="tokens_permissions" value="3" />
-          <entry key="txt" value="3" />
+          <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -100,8 +107,8 @@
           <entry key="JSON" value="2" />
           <entry key="Log" value="7" />
           <entry key="Markdown" value="13" />
-          <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="72" />
+          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="Python" value="93" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
@@ -111,12 +118,12 @@
           <entry key="Python Console" value="3" />
           <entry key="README" value="200" />
           <entry key="configs" value="3" />
-          <entry key="dummy" value="39" />
+          <entry key="dummy" value="47" />
           <entry key="gitignore" value="48" />
           <entry key="ini" value="20" />
           <entry key="log" value="1" />
-          <entry key="md" value="1034" />
-          <entry key="py" value="14027" />
+          <entry key="md" value="1175" />
+          <entry key="py" value="15416" />
           <entry key="requirements" value="3" />
           <entry key="sql" value="175" />
           <entry key="token" value="16" />
@@ -127,9 +134,9 @@
         <counts>
           <entry key="Ini" value="39" />
           <entry key="Log" value="1" />
-          <entry key="Markdown" value="1234" />
-          <entry key="PLAIN_TEXT" value="111" />
-          <entry key="Python" value="14019" />
+          <entry key="Markdown" value="1375" />
+          <entry key="PLAIN_TEXT" value="119" />
+          <entry key="Python" value="15408" />
           <entry key="SQL" value="60" />
           <entry key="Scratch" value="126" />
         </counts>
@@ -139,72 +146,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="187">
-                <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/gw2_app/achievements/achievements.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="36" column="40" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="40" />
-              <folding>
-                <marker date="1537667274799" expanded="true" signature="37:42" ph="..." />
-                <marker date="1537667274799" expanded="true" signature="527:1075" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/gw2_app/achievements/daily.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1538090103940" expanded="true" signature="95:100" ph="..." />
-                <marker date="1538090103940" expanded="true" signature="868:1012" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/disc_bot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="130" selection-start-line="130" selection-end-line="130" />
-              <folding>
-                <element signature="e#10#24#0" expanded="true" />
-                <marker date="1538089678595" expanded="true" signature="3778:3779" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/util/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -222,6 +164,9 @@
       <find>build_achievements</find>
       <find>dailies_embed_desc</find>
       <find>get_images</find>
+      <find>Music</find>
+      <find>join</find>
+      <find>member</find>
     </findStrings>
     <replaceStrings>
       <replace>permission</replace>
@@ -231,6 +176,7 @@
       <replace>_build_achievements</replace>
       <replace>_dailies_desc</replace>
       <replace>get_images_path</replace>
+      <replace>MusicCog</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -269,12 +215,17 @@
         <option value="$PROJECT_DIR$/apps/math_app/math.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/todo list.md" />
-        <option value="$PROJECT_DIR$/apps/gw2_app/gw2.py" />
         <option value="$PROJECT_DIR$/apps/gw2_app/achievements/achievements.py" />
-        <option value="$PROJECT_DIR$/disc_bot.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/apps/gw2_app/achievements/daily.py" />
         <option value="$PROJECT_DIR$/util/util.py" />
+        <option value="$PROJECT_DIR$/apps/music_app/music.py" />
+        <option value="$PROJECT_DIR$/apps/gw2_app/gw2.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/apps/gw2_app/gw2_cog.py" />
+        <option value="$PROJECT_DIR$/apps/music_app/music_cog.py" />
+        <option value="$PROJECT_DIR$/apps/funny_app/fun_cog.py" />
+        <option value="$PROJECT_DIR$/disc_bot.py" />
+        <option value="$PROJECT_DIR$/apps/morse_app/morse_cog.py" />
       </list>
     </option>
   </component>
@@ -285,8 +236,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
+    <option name="x" value="101" />
+    <option name="y" value="-19" />
     <option name="width" value="1340" />
     <option name="height" value="728" />
   </component>
@@ -294,9 +245,7 @@
     <entry key="Project Default">
       <profile-state>
         <expanded-state>
-          <State>
-            <id />
-          </State>
+          <State />
           <State>
             <id>Python</id>
           </State>
@@ -317,7 +266,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -328,18 +276,19 @@
             <path>
               <item name="DiscBot" type="b2602c69:ProjectViewProjectNode" />
               <item name="DiscBot" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DiscBot" type="b2602c69:ProjectViewProjectNode" />
               <item name="DiscBot" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="morse_app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,6 +299,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\otavi\Google Drive\Projetos\PYTHON\DiscBot\data\dll" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\otavi\Google Drive\Projetos\PYTHON\DiscBot\apps" />
       <recent name="C:\Users\otavi\Google Drive\Projetos\PYTHON\DiscBot" />
@@ -434,6 +386,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="music" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DiscBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apps/music_app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\otavi\Google Drive\Projetos\PYTHON\DiscBot\apps\music_app\music_cog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="util" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DiscBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -456,35 +430,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestDiscBot" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="DiscBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestDiscBot&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for tests.TestDiscBot" />
       <item itemvalue="Python.disc_bot" />
       <item itemvalue="Python.util" />
       <item itemvalue="Python.daily" />
       <item itemvalue="Python.achievements" />
+      <item itemvalue="Python.music" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.disc_bot" />
+        <item itemvalue="Python.music" />
         <item itemvalue="Python.daily" />
         <item itemvalue="Python.achievements" />
         <item itemvalue="Python.util" />
-        <item itemvalue="Python tests.Unittests for tests.TestDiscBot" />
       </list>
     </recent_temporary>
   </component>
@@ -544,21 +503,48 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22264437" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24392097" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="DB Browser" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49620062" weight="0.3276923" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48404256" weight="0.37285715" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32857144" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49012157" visible="true" weight="0.32714286" />
+      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49848023" weight="0.3257143" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5098784" side_tool="true" weight="0.32714286" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32861635" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.4969605" weight="0.3276923" />
+      <window_info anchor="bottom" id="DB Execution Console" order="14" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
+      <window_info anchor="right" id="SciView" order="5" weight="0.32978722" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32978722" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2256839" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49620062" weight="0.3276923" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48404256" visible="true" weight="0.37285715" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48404256" weight="0.37285715" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32861635" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4969605" weight="0.3276923" />
-      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49848023" weight="0.32704404" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4969605" visible="true" weight="0.32714286" />
+      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49848023" weight="0.3257143" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5159575" side_tool="true" weight="0.3276923" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32861635" />
@@ -570,32 +556,6 @@
       <window_info anchor="right" id="R Packages" order="4" />
       <window_info anchor="right" id="SciView" order="5" weight="0.32978722" />
       <window_info anchor="right" id="Database" order="6" weight="0.32978722" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2819149" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49620062" weight="0.3276923" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4726444" weight="0.3276923" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4969605" weight="0.3276923" />
-      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49848023" weight="0.3276923" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50303954" side_tool="true" visible="true" weight="0.3276923" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.4969605" visible="true" weight="0.3276923" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="right" id="R Packages" order="4" />
-      <window_info anchor="right" id="SciView" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.32978722" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,45 +565,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/discord/emoji.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/discord/ext/commands/bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="845" selection-start-line="845" selection-end-line="845" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/discord/message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/discord/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/907059903/winsound.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/discord/ext/commands/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="567" column="8" selection-start-line="567" selection-start-column="8" selection-end-line="567" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README" />
     <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/logging/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -700,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/morse_app/morse_string_conv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/gw2_app/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -728,20 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/morse_app/morse_dictonarie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/morse_app/morse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
@@ -794,13 +694,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo list.md" />
-    <entry file="file://$PROJECT_DIR$/apps/math_app/math.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-881">
@@ -815,13 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/gw2_app/gw2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/discord/embeds.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -829,24 +715,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/switch/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="805">
           <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/discord/ext/commands/bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="320" column="8" selection-start-line="320" selection-start-column="8" selection-end-line="320" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -864,54 +736,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/gw2_app/achievements/achievements.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="36" column="40" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="40" />
-          <folding>
-            <marker date="1537667274799" expanded="true" signature="37:42" ph="..." />
-            <marker date="1537667274799" expanded="true" signature="527:1075" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="187">
-            <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/gw2_app/achievements/daily.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1538090103940" expanded="true" signature="95:100" ph="..." />
-            <marker date="1538090103940" expanded="true" signature="868:1012" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/disc_bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-          <folding>
-            <element signature="e#10#24#0" expanded="true" />
-            <marker date="1538089678595" expanded="true" signature="3778:3779" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -920,10 +748,161 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="1702">
           <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/gw2_app/achievements/achievements.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/discord/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="989">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/discord/ext/commands/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="205" column="8" selection-start-line="205" selection-start-column="8" selection-end-line="205" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/discord/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/discord/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="2897" column="35" lean-forward="true" selection-start-line="2892" selection-start-column="30" selection-end-line="2897" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/discord/member.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-171">
+          <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1081">
+            <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/math_app/math.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/music_app/music_cog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/morse_app/morse_string_conv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funny_app/fun_cog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1538195342448" expanded="true" signature="77:82" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/morse_app/morse_dictonarie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-308">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/morse_app/morse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/disc_bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+          <folding>
+            <element signature="e#10#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/morse_app/morse_cog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1538665943869" expanded="true" signature="127:191" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/gw2_app/gw2_cog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/gw2_app/achievements/daily.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+            <marker date="1538090103940" expanded="true" signature="95:100" ph="..." />
+            <marker date="1538090103940" expanded="true" signature="868:1012" ph="..." />
           </folding>
         </state>
       </provider>

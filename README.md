@@ -45,6 +45,7 @@ In the data folder, you should to create a file named **configs.ini**, the file 
 ## Todo List
 
 1. [ ] Keep all commands documented and logged
+2. [ ] Create a status to bot for when he was processing a command
 1. [x] Create a simple bot
 2. [x] Create a morse app
 3. [ ] Create a Guild Wars 2 app

@@ -1,27 +1,20 @@
 # Imports
-import asyncio
-
 import discord
 from discord.ext import commands
 
-import random
 import configparser
 from log import logger
-import typing
 
-from apps.morse_app.morse import Morse
-from apps.gw2_app import gw2
+from apps.morse_app import morse_cog
+from apps.gw2_app import gw2_cog
+from apps.music_app import music_cog
+from apps.funny_app import fun_cog
 from util import util
 
 
 # Setup Logger
 logger = logger.setup_logger()
 
-# Morse Object
-msg_morse = Morse()
-
-# GW2 Object
-guild_wars_2 = gw2.GW2()
 
 # Configs object, see README for format
 configs = configparser.ConfigParser()
@@ -31,106 +24,29 @@ configs.read("data/configs.ini")
 bot = commands.Bot(command_prefix='?', description='A simple bot for discord')
 
 
-# Define a greeting on bots is stated
 @bot.event
 async def on_ready():
+    """ Remember """
     msg = util.welcome_console_msg(bot.user)
     print(msg)
     logger.log(logger.INFO, util.get_log_msg(msg))
 
 
-# Test method
-@bot.command()
-async def test():
-    msg = "Hello World!, Am I alive?"
-    await bot.say(msg)
-    logger.log(logger.INFO, util.get_log_say_msg(msg))
+@bot.event
+async def on_member_join(member: discord.Member):
+    """ Remember """
+    await bot.add_roles(member, discord.utils.get(member.server.roles, name="New Member"))
+    await bot.say(f"Hello {member.name}, Welcome to {member.server.name} server")
 
-
-# Method that returns 😝 or 👑, like if you are flipping a coin
-@bot.command()
-async def coin():
-    if random.randint(1, 2) == 1:
-        msg = "😝"
-    else:
-        msg = "👑"
-    await bot.say(msg)
-    logger.log(logger.INFO, util.get_log_say_msg(msg))
-
-
-# Method that returns if the member are a admin or not, admin verification needs to be more effective
+"""
 @bot.command(pass_context=True)
-async def admin(ctx: discord.ext.commands.Context):
-    # List of admins ids
-    admin_ids = {'358652273217372161'}
-    if ctx.message.author.id in admin_ids:
-        msg = "You're the B.O.S.S"
-    else:
-        msg = "You aren't the B.O.S.S"
-    await bot.say(msg)
-    logger.log(logger.INFO, util.get_log_say_msg(msg))
+async def notfuntest(ctx):
+    await on_member_join(ctx.message.author)
+"""
 
-
-# Method that says when the member joined
-@bot.command(pass_context=True)
-async def joined(ctx):
-    member = ctx.message.author
-    msg = f"{member.name} joined at {member.joined_at}"
-    await bot.say(msg)
-    logger.log(logger.INFO, util.get_log_say_msg(msg))
-
-
-# Method that returns the author's converted message to morse_app
-@bot.command(pass_context=True)
-async def morse(ctx: discord.ext.commands.Context):
-    msg = str(ctx.message.content).replace("?morse ", "")
-    msg_parsed = msg_morse.conv(msg)
-    await bot.say(msg_parsed)
-    logger.log(logger.INFO, util.get_log_say_msg(msg_parsed))
-
-
-@bot.group(pass_context=True)
-async def gw2(ctx):
-    if ctx.invoked_subcommand is None:
-        await bot.say('Invalid gw2 command passed...')
-
-
-@gw2.group(pass_context=True)
-async def token(ctx: discord.ext.commands.Context):
-    if ctx.invoked_subcommand is None:
-        await bot.say('Invalid token command passed...')
-    else:
-        await bot.delete_message(ctx.message)
-
-
-@token.command(pass_context=True)
-async def add(ctx: discord.ext.commands.Context, msg: str):
-    check = guild_wars_2.token.add_token(msg, ctx.message.author.id)
-    msg = "Token Adicionado com sucesso" if check else "Token Inválido"
-    await bot.say(msg)
-
-
-@token.command(pass_context=True)
-async def remove(ctx: discord.ext.commands.Context):
-    check = guild_wars_2.token.remove_token(ctx.message.author.id)
-    msg = "Token removido com sucesso" if check else "Token Inválido"
-    await bot.say(msg)
-
-
-@token.command(pass_context=True)
-async def update(ctx: discord.ext.commands.Context, msg: str):
-    check = guild_wars_2.token.update_token(owner=ctx.message.author.id, token=msg)
-    msg = "Token atualizado com sucesso" if check else "Token Inválido"
-    await bot.say(msg)
-
-
-@gw2.command()
-async def dailies(tomorrow: str = "today"):
-    tomorrow = True if tomorrow is not None and tomorrow.lower() == "tomorrow" else False
-    all_dailies = guild_wars_2.daily.get_dailies(tomorrow=tomorrow)
-    for key, daily in all_dailies.items():
-        if daily:
-            msg = util.dailies_desc(daily, key, tomorrow)
-            await bot.say(embed=msg)
+bot.add_cog(music_cog.MusicCog(bot))
+bot.add_cog(morse_cog.MorseCog(bot))
+bot.add_cog(gw2_cog.Gw2Cog(bot))
+bot.add_cog(fun_cog.FunCog(bot))
 
 bot.run(configs["TOKEN"].get("token"))
