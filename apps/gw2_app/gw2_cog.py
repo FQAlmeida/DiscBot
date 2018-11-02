@@ -9,8 +9,8 @@ from util import util
 
 class Gw2Cog:
     def __init__(self, bot):
-        self.token = api_token.Token()
-        self.daily = daily.Daily()
+        self.token_obj = api_token.Token()
+        self.daily_obj = daily.Daily()
         self.bot = bot
 
     @commands.group(pass_context=True)
@@ -30,21 +30,21 @@ class Gw2Cog:
     @token.command(pass_context=True)
     async def add(self, ctx: discord.ext.commands.Context, msg: str):
         """ Remember """
-        check = self.token.add_token(msg, ctx.message.author.id)
+        check = self.token_obj.add_token(msg, ctx.message.author.id)
         msg = "Token Adicionado com sucesso" if check else "Token Inválido"
         await self.bot.say(msg)
 
     @token.command(pass_context=True)
     async def remove(self, ctx: discord.ext.commands.Context):
         """ Remember """
-        check = self.token.remove_token(ctx.message.author.id)
+        check = self.token_obj.remove_token(ctx.message.author.id)
         msg = "Token removido com sucesso" if check else "Token Inválido"
         await self.bot.say(msg)
 
     @token.command(pass_context=True)
     async def update(self, ctx: discord.ext.commands.Context, msg: str):
         """ Remember """
-        check = self.token.update_token(owner=ctx.message.author.id, token=msg)
+        check = self.token_obj.update_token(owner=ctx.message.author.id, token=msg)
         msg = "Token atualizado com sucesso" if check else "Token Inválido"
         await self.bot.say(msg)
 
@@ -53,7 +53,7 @@ class Gw2Cog:
         """ Remember """
         await self.bot.change_presence(game=discord.Game(name="Processing..."))
         tomorrow = True if tomorrow is not None and tomorrow.lower() == "tomorrow" else False
-        all_dailies = self.daily.get_dailies(tomorrow=tomorrow)
+        all_dailies = self.daily_obj.get_dailies(tomorrow=tomorrow)
         for key, value in all_dailies.items():
             if value:
                 msg = util.dailies_desc(value, key, tomorrow)
