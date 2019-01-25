@@ -27,13 +27,7 @@ class Token:
         check = self.check_token(token)
         if check:
             cursor = self.conn.cursor()
-            cursor.execute(
-                "SELECT token_owner "
-                "FROM tokens "
-                "where token_owner =:owner",
-                {"owner": owner}
-            )
-            data = cursor.fetchall()
+            data = self.get_token(owner)
             for row in data:
                 if owner in row[0]:
                     self._remove_permissions(owner)
@@ -43,22 +37,39 @@ class Token:
                         "WHERE token_owner =:owner",
                         {"token": token, "owner": owner}
                     )
-                    self._add_permissions(token=token, owner=owner, permissions=check[1]["permissions"])
+                    self._add_permissions(
+                        token=token, owner=owner, permissions=check[1]["permissions"])
                     cursor.close()
                     self.conn.commit()
                     return True
             cursor.close()
         return False
 
+    def get_token(self, owner):
+        cursor = self.conn.cursor()
+        cursor.execute(
+            "SELECT token_owner "
+            "FROM tokens "
+            "where token_owner =:owner",
+            {"owner": owner}
+        )
+        data = cursor.fetchall()
+        return data
+
+    def get_tokens(self):
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT * FROM tokens")
+        data = cursor.fetchall()
+        return data
+
     def add_token(self, token, owner):
         check = self.check_token(token)
         if check:
-            cursor = self.conn.cursor()
-            cursor.execute("SELECT * FROM tokens")
-            data = cursor.fetchall()
+            data = self.get_tokens()
             for row in data:
                 if token in row[1]:
                     return False
+            cursor = self.conn.cursor()
             cursor.execute(
                 "INSERT INTO tokens (token_value, token_owner) "
                 "values (?, ?)",

@@ -80,3 +80,8 @@ In the data folder, you should to create a file named **configs.ini**, the file 
                 - Layout will be formed with 5 embed messages, 1 for each element in dict
             2. [x] Pass to bot says as a embed message
                 - Bot will say a message for each embed message
+
+    3. [ ] Create a build view
+        1. [ ] Check if the user have an api-key with permission
+        2. [ ] Get the data
+        3. [ ] Display the data
