@@ -27,7 +27,7 @@ class Token:
         check = self.check_token(token)
         if check:
             cursor = self.conn.cursor()
-            data = self.get_token(owner)
+            data = self.get_token_owner(owner)
             for row in data:
                 if owner in row[0]:
                     self._remove_permissions(owner)
@@ -45,7 +45,7 @@ class Token:
             cursor.close()
         return False
 
-    def get_token(self, owner):
+    def get_token_owner(self, owner):
         cursor = self.conn.cursor()
         cursor.execute(
             "SELECT token_owner "
@@ -55,6 +55,21 @@ class Token:
         )
         data = cursor.fetchall()
         return data
+        
+
+    def get_token(self, owner):
+        cursor = self.conn.cursor()
+        cursor.execute(
+            "SELECT token_value "
+            "FROM tokens "
+            "where token_owner =:owner",
+            {"owner": owner}
+        )
+        data = cursor.fetchall()
+        if len(data) == 1 and type(data[0][0]) == str:
+            return data[0][0]
+        else:
+            return None
 
     def get_tokens(self):
         cursor = self.conn.cursor()
@@ -83,13 +98,7 @@ class Token:
 
     def remove_token(self, owner):
         cursor = self.conn.cursor()
-        cursor.execute(
-            "SELECT token_owner "
-            "FROM tokens "
-            "where token_owner =:owner",
-            {"owner": owner}
-        )
-        data = cursor.fetchall()
+        data = self.get_token_owner(owner)
         for row in data:
             if owner in row[0]:
                 cursor.execute(

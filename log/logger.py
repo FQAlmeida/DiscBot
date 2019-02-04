@@ -9,7 +9,7 @@ def setup_logger():
     logger.setLevel(logging.DEBUG)
 
     # Handler for logging events format and save in the file
-    handler = logging.FileHandler(filename='data\logger.log', encoding='utf-8', mode='w')
+    handler = logging.FileHandler(filename='data\logger.log', encoding='utf-8', mode='a')
     handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
     logger.addHandler(handler)
 

@@ -142,3 +142,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+dll/
+*.dll
+*.json

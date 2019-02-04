@@ -1,4 +1,5 @@
 import datetime
+import json
 
 import discord
 import switch as switch
@@ -83,3 +84,7 @@ def dailies_desc(
         msg.add_field(name=name, value=value, inline=False)
 
     return msg
+
+def save_gw2_data(filename, data):
+    with open("data/gw2_data/{filename}.json", "w+") as file:
+        json.dump(data, file)

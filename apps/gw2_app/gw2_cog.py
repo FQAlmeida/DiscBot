@@ -1,5 +1,6 @@
 from apps.gw2_app.achievements import daily
 from apps.gw2_app.apitoken import api_token
+from apps.gw2_app.builds import builds
 
 import discord
 from discord.ext import commands
@@ -11,6 +12,7 @@ class Gw2Cog:
     def __init__(self, bot):
         self.token_obj = api_token.Token()
         self.daily_obj = daily.Daily()
+        self.builds_obj = builds.Gw2Build()
         self.bot = bot
 
     @commands.group(pass_context=True)
@@ -58,4 +60,13 @@ class Gw2Cog:
             if value:
                 msg = util.dailies_desc(value, key, tomorrow)
                 await self.bot.say(embed=msg)
+        await self.bot.change_presence(game=discord.Game(name="Waiting..."))
+    
+    @gw2.command(pass_context=True)
+    async def build(self, ctx: discord.ext.commands.Context, msg: str):
+        """ Remember """
+        await self.bot.change_presence(game=discord.Game(name="Processing..."))
+        msgs = self.builds_obj.mount_build(ctx.message.author.id, msg)
+        for msg in msgs:
+            await self.bot.say(embed=msg)
         await self.bot.change_presence(game=discord.Game(name="Waiting..."))
