@@ -1,4 +1,3 @@
-import winsound as ws
 
 from apps.morse_app import morse_string_conv
 from apps.morse_app import morse_dictonarie
@@ -24,10 +23,14 @@ class Morse:
 
     @staticmethod
     def beep(morse):
-        for x in list(morse):
-            if x == '.':
-                ws.Beep(400, 100)
-            elif x == '-':
-                ws.Beep(400, 300)
-            elif x == ' ':
-                ws.Beep(37, 100)
+        try:
+            import winsound as ws
+            for x in list(morse):
+                if x == '.':
+                    ws.Beep(400, 100)
+                elif x == '-':
+                    ws.Beep(400, 300)
+                elif x == ' ':
+                    ws.Beep(37, 100)
+        except:
+            return

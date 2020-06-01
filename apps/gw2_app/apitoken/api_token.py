@@ -1,5 +1,5 @@
 import re
-import requests as r
+import requests
 import sqlite3
 
 
@@ -10,18 +10,36 @@ class Token:
         self.url_token = "https://api.guildwars2.com/v2/tokeninfo?access_token="
         self.account_url = "https://api.guildwars2.com/v2/account?access_token="
         self.conn = sqlite3.connect("data/gw2_database.SQLITE")
+        self.init_database_tables()
 
     def check_token(self, token):
         result = self.regex.fullmatch(token)
         if result:
             url = f"{self.url_token}{token}"
-            req = r.get(url)
+            req = requests.get(url)
             json_req = req.json()
             if "text" in json_req:
                 return False
             permissions = json_req.get("permissions")
             id = json_req.get("id")
             return True, {"id": id, "permissions": permissions}
+
+    def init_database_tables(self):
+        cursor = self.conn.cursor()
+        cursor.execute(
+            "CREATE TABLE IF NOT EXISTS tokens ("
+            "token_owner NOT NULL, "
+            "token_value NOT NULL"
+            ")"
+        )
+        cursor.execute(
+            "CREATE TABLE IF NOT EXISTS tokens_permissions ("
+            "token_value NOT NULL, "
+            "permission_name NOT NULL, "
+            "token_owner NOT NULL"
+            ")"
+        )
+        cursor.close()
 
     def update_token(self, owner, token):
         check = self.check_token(token)
@@ -55,7 +73,6 @@ class Token:
         )
         data = cursor.fetchall()
         return data
-        
 
     def get_token(self, owner):
         cursor = self.conn.cursor()

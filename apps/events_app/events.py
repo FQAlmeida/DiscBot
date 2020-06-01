@@ -1,30 +1,31 @@
 import discord
 import requests
+from discord import Member, utils as discord_utils, Guild, TextChannel, File
 from discord.ext.commands import Bot
 from io import BytesIO
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 
 class WelcomeMember:
-    def __init__(self, bot: Bot, member: discord.Member):
+    def __init__(self, bot: Bot, member: Member):
         self.bot = bot
         self.member = member
 
     async def new_member_role(self):
-        role = discord.utils.get(self.member.server.roles, name="New Member")
-        await self.bot.add_roles(self.member, role)
+        role = discord_utils.get(self.member.server.roles, name="New Member")
+        await self.member.add_roles(role)
 
     async def send_welcome_msg(self):        
-        server = discord.utils.get(self.bot.servers, name="FQA")
-        channel = discord.utils.get(
-            self.bot.get_all_channels(), server=server, name="welcome")
+        guild: Guild = self.member.guild
+        channel: TextChannel = discord_utils.get(
+            self.bot.get_all_channels(), guild=guild, name="welcome")
         image_name = self.mount_welcome_image(
-            self.member.avatar_url, self.member.name)
-        emoji = discord.utils.get(self.member.server.emojis, name="crownturtle")
+            self.member.avatar_url, self.member.nick)
+        emoji = discord_utils.get(guild.emojis, name="crownturtle")
         msg = f"Hey {self.member.mention}! {emoji}"
-        await self.bot.send_file(channel, image_name, content=msg)
+        await channel.send(file=File(image_name), content=msg)
 
-    def mount_welcome_image(self, avatar_url, member_name):
+    def mount_welcome_image(self, avatar_url: str, member_name: str):
         """
             Build the welcome image
         """

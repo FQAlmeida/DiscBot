@@ -1,6 +1,14 @@
 {
-    "python.pythonPath": "C:\\Users\\otavi\\AppData\\Local\\Programs\\Python\\Python36\\python36.exe",
+    "python.pythonPath": "/home/fqa/.local/share/virtualenvs/DiscBot-uc7r8iNr/bin/python",
     "files.autoSave": "onFocusChange",
-    "editor.fontFamily": "Consolas, 'Courier New', monospace",
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "sqlite.databaseExtensions": [
+        "db",
+        "db3",
+        "sdb",
+        "s3db",
+        "sqlite",
+        "sqlite3",
+        "SQLITE"
+    ]
 }

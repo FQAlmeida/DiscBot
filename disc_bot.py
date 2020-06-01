@@ -1,6 +1,7 @@
 # Imports
 import discord
 from discord.ext import commands
+from discord import Status
 
 import configparser
 from log import logger
@@ -20,9 +21,9 @@ logger = logger.setup_logger()
 # Configs object, see README for format
 configs = configparser.ConfigParser()
 configs.read("data/configs.ini")
-
 # Bot object
 bot = commands.Bot(command_prefix='?', description='A simple bot for discord')
+
 
 
 @bot.event
@@ -30,7 +31,7 @@ async def on_ready():
     """ Remember """
     msg = util.welcome_console_msg(bot.user)
     print(msg)
-    await bot.change_presence(game=discord.Game(name="Waiting..."))
+    await bot.change_presence(activity=discord.Game(name="Waiting..."), status=Status.idle)
     logger.log(logger.INFO, util.get_log_msg(msg))
 
 
@@ -51,4 +52,9 @@ bot.add_cog(morse_cog.MorseCog(bot))
 bot.add_cog(gw2_cog.Gw2Cog(bot))
 bot.add_cog(fun_cog.FunCog(bot))
 
-bot.run(configs["TOKEN"].get("token"))
+try:
+    token = configs["TOKEN"].get("token")
+except:
+    token = environ.get("DISCORD_TOKEN")
+
+bot.run(token)

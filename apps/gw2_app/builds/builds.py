@@ -3,6 +3,7 @@ import json
 import discord
 import datetime
 import random
+from typing import Union
 
 from ..apitoken.api_token import Token
 
@@ -33,14 +34,15 @@ class Gw2Build:
                 equips_ids, equips_data, stat_data, character))
             return msgs
 
-    def check_api(self, owner):
-        self.owner = owner
+    def check_api(self, owner) -> (bool, Union[str, None]):
         token = self.token_obj.get_token(owner)
+        if not token:
+            return False, None
         check = self.token_obj.check_token(token)
-        if not token or not check[0]:
-            return False
+        if not check[0]:
+            return False, None
         if "characters" not in check[1].get("permissions"):
-            return False
+            return False, None
         return True, token
 
     def get_skills_data(self, skills):

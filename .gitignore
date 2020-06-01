@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 *.SQLITE
+*.SQLITE-journal
 
 # C extensions
 *.so
@@ -148,5 +149,4 @@ dll/
 *.dll
 *.json
 
-**/images
-**/fonts
+.vscode
