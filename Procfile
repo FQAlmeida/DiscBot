@@ -1,1 +1,1 @@
-worker: pipenv run python disc_bot.py
+worker: python disc_bot.py
