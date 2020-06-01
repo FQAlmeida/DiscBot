@@ -7,7 +7,7 @@ import switch as switch
 
 def welcome_console_msg(user):
     """
-    
+
     **********BOT ONLINE***********
          Logged in as: FULANO
     Under ID: 456531235446518479879
@@ -19,7 +19,7 @@ def welcome_console_msg(user):
     id_data = f"Under ID: {user.id}"
     bigger = (len(logged) if len(logged) > len(id_data) else len(id_data)) + 2
 
-    # Define the header 
+    # Define the header
     header = f"{' BOT ONLINE ':*^{bigger}}"
 
     # Define the logged_layout based in logged data
@@ -70,12 +70,14 @@ def dailies_desc(
 ) -> discord.Embed:
 
     now = datetime.datetime.now()
-    date = now + (datetime.timedelta(days=1) if tomorrow else datetime.timedelta(days=0))
+    date = now + (datetime.timedelta(days=1)
+                  if tomorrow else datetime.timedelta(days=0))
     title = prettify_key(key)
     image = get_images_path("Daily_Achievement.png")
     description = f"{title} Daily Achievements - {date.date()}\n"
 
-    msg = discord.Embed(title=title, timestamp=date, description=description, colour=colour)
+    msg = discord.Embed(title=title, timestamp=date,
+                        description=description, colour=colour)
     msg.set_thumbnail(url="https://i.imgur.com/oqNgdeP.png")
 
     for daily in dailies:
@@ -84,6 +86,7 @@ def dailies_desc(
         msg.add_field(name=name, value=value, inline=False)
 
     return msg
+
 
 def save_gw2_data(filename, data):
     with open("data/gw2_data/{filename}.json", "w+") as file:

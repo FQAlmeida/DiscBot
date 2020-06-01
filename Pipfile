@@ -11,6 +11,7 @@ pylint = "*"
 discord = "*"
 pillow = "*"
 requests = "*"
+switch = "*"
 
 [requires]
 python_version = "3.8"
