@@ -12,6 +12,7 @@ from apps.music_app import music_cog
 from apps.funny_app import fun_cog
 from apps.events_app.events import WelcomeMember
 from util import util
+from os import environ
 
 
 # Setup Logger
